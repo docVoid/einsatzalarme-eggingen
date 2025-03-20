@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einsatzalarme Eggingen</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            background-color: red;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Keine Alarmierungen vorhanden</h1>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js').then(() => {
+                console.log('Service Worker registriert');
+            }).catch(error => {
+                console.error('Service Worker Registrierung fehlgeschlagen:', error);
+            });
+        }
+    </script>
+</body>
+</html>
